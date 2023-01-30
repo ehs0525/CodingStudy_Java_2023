@@ -7,12 +7,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
-// 순열
-public class Main_S2_15663_N과M9 {
+// 조합
+public class Main_S2_15664_N과M10 {
 
 	static int N, M;
 	static int[] num, seq;
-	static boolean[] isSelected;
 	static HashSet<String> set = new HashSet<>();
 	static StringBuilder sb = new StringBuilder();
 
@@ -26,18 +25,17 @@ public class Main_S2_15663_N과M9 {
 
 		num = new int[N];
 		seq = new int[M];
-		isSelected = new boolean[N];
 		st = new StringTokenizer(in.readLine(), " ");
 		for (int i = 0; i < N; i++) {
 			num[i] = Integer.parseInt(st.nextToken());
 		}
 		Arrays.sort(num);
 
-		permut(0);
-		System.out.print(sb);
+		comb(0, 0);
+		System.out.println(sb);
 	}
 
-	private static void permut(int cnt) {
+	private static void comb(int start, int cnt) {
 		if (cnt == M) {
 			StringBuilder temp = new StringBuilder();
 			for (int i = 0; i < M; i++) {
@@ -53,15 +51,9 @@ public class Main_S2_15663_N과M9 {
 			return;
 		}
 
-		for (int i = 0; i < N; i++) {
-			if (!isSelected[i]) {
-				seq[cnt] = num[i];
-				isSelected[i] = true;
-				permut(cnt + 1);
-				isSelected[i] = false;
-			}
+		for (int i = start; i < N; i++) {
+			seq[cnt] = num[i];
+			comb(i + 1, cnt + 1);
 		}
-
 	}
-
 }
