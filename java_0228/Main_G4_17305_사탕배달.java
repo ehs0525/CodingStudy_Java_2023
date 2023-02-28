@@ -51,5 +51,4 @@ public class Main_G4_17305_ªÁ≈¡πË¥ﬁ {
 
 		System.out.println(max);
 	}
-
 }
