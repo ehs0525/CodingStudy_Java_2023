@@ -60,7 +60,7 @@ public class Main_G2_12100_2048Easy {
 			}
 
 			for (int i = 0; i < 4; i++) {
-				areCombined = new boolean[N][N];
+				areCombined = new boolean[N][N]; 
 
 				int[][] nb = copy(curr.block);
 				int nc = curr.cnt + 1;
