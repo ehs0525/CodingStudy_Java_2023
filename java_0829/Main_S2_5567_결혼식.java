@@ -73,5 +73,4 @@ public class Main_S2_5567_°áÈ¥½Ä {
 
 		return cnt;
 	}
-
 }
